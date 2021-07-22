@@ -21,7 +21,7 @@ contract HodlersVault is Ownable {
     event WithdrawHodlPosition(address indexed _hodler, uint256 indexed _value, uint256 indexed _withdrawTime);
     event LiquidateHodlPosition(address indexed _hodler, uint256 indexed _value, uint256 indexed _liquidateTime);
 
-    constructor(){
+    constructor() {
     }
 
     /**
