@@ -1,0 +1,36 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-etherscan": "^2.1.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.2.0",
+    "chai": "^4.2.0",
+    "chai-bignumber": "^3.0.0",
+    "chai-bn": "^0.2.1",
+    "dotenv": "^10.0.0",
+    "ethereum-waffle": "^3.2.1",
+    "ethers": "^5.0.24",
+    "hardhat": "^2.4.3",
+    "hardhat-deploy": "^0.7.0-beta.39",
+    "solidity-coverage": "^0.7.16",
+    "web3": "^1.4.0"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-truffle5": "^2.0.0",
+    "babel-eslint": "^10.1.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.22.0",
+    "mocha-skip-if": "^0.0.3",
+    "transform": "^1.1.2"
+  },
+  "version": "1.0.0",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
