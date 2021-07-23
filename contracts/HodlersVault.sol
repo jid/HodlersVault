@@ -55,13 +55,14 @@ contract HodlersVault is Ownable {
      * @param _days Number of days to HODL.
      *
      * NOTE: Only single HODL position is possible for single address.
+     * Can create HODL position on behalve of someone else.
      */
     function hodl(address _hodler, uint256 _days) external payable onlySinglePosition(_hodler) {
         require(msg.value > 0, "HodlersVault: can't HODL 0 tokens.");
         require(_hodler != address(0), "HodlersVault: can't HODL for 0x0 address.");
 
         uint256 releaseTime = block.timestamp + _days * 1 days;
-        _hodlings[_hodler].push(Hodling({value_: msg.value, createTime_: block.timestamp, releaseTime_: block.timestamp + _days * 1 days}));
+        _hodlings[_hodler].push(Hodling({value_: msg.value, createTime_: block.timestamp, releaseTime_: releaseTime}));
         emit SetHodlPosition(_hodler, msg.value, releaseTime);
     }
 
@@ -123,10 +124,10 @@ contract HodlersVault is Ownable {
     }
 
     receive() external payable {
-        revert("Contract doesn't accept Ether.");
+        revert("HodlersVault: contract doesn't accept Ether.");
     }
 
     fallback() external payable{
-        revert("Contract doesn't accept Ether.");
+        revert("HodlersVault: contract doesn't accept Ether or invalid API call.");
     }
 }
